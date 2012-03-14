@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>instagralley</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" href="/photoswipe/examples/jquery-mobile.css" />
+	<link rel="stylesheet" href="/photoswipe/photoswipe.css" />
+	<script src="/photoswipe/lib/klass.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="/photoswipe/code.photoswipe.jquery-3.0.4.min.js"></script>
+	<script src="/instagralley.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+  </head>
+  <body>
+    <section id="media-popular" class="gallery-page" data-role="page">
+      <header data-role="header" data-position="fixed">
+        <h1>instagralley</h1>
+      </header>
+      <div data-role="content">
+        <ul class="gallery">
+          <% photos.slice(0, 30).each do |photo| %>
+            <li>
+            <a href="<%= photo['images']['low_resolution']['url'] %>" rel="external" data-related-url="<%= photo['link']  %>">
+              <img src="<%= photo['images']['thumbnail']['url'] %>" />
+            </a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <footer data-role="footer">
+        <h1>Development by <a href="http://holidayworking.org/" rel="external">holidayworking</a></h1>
+      </footer>
+    </section>
+  </body>
+</html>
